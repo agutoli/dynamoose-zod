@@ -1,6 +1,16 @@
 {
   "name": "dynamoose-zod",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "Convert Zod schemas to Dynamoose schema definitions easily",
+  "keywords": ["zod", "dynamoose", "dynamodb", "schema", "typescript"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:agutoli/dynamoose-zod.git"
+  },
+  "homepage": "https://github.com/agutoli/dynamoose-zod",
+  "bugs": {
+    "url": "https://github.com/agutoli/dynamoose-zod/issues"
+  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,6 +20,12 @@
       "require": "./dist/index.js"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Bruno Agutoli <bruno.agutoli@gmail.com>",
   "scripts": {
     "build": "tsup"
   },
@@ -22,5 +38,6 @@
     "dynamoose": "^4.0.4",
     "tsup": "^8.4.0",
     "typescript": "^5.3.3"
-  }
+  },
+  "license": "MIT"
 }
