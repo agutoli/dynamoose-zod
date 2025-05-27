@@ -2,7 +2,13 @@
   "name": "dynamoose-zod",
   "version": "0.1.1",
   "description": "Convert Zod schemas to Dynamoose schema definitions easily",
-  "keywords": ["zod", "dynamoose", "dynamodb", "schema", "typescript"],
+  "keywords": [
+    "zod",
+    "dynamoose",
+    "dynamodb",
+    "schema",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:agutoli/dynamoose-zod.git"
@@ -27,17 +33,21 @@
   ],
   "author": "Bruno Agutoli <bruno.agutoli@gmail.com>",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test": "jest"
   },
   "peerDependencies": {
-    "zod": "^3.22.0",
-    "dynamoose": "^4.0.4"
+    "dynamoose": "^4.0.4",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
-    "zod": "^3.22.0",
+    "@types/jest": "^29.5.14",
     "dynamoose": "^4.0.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.4",
     "tsup": "^8.4.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3",
+    "zod": "^3.22.0"
   },
   "license": "MIT"
 }
