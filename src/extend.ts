@@ -50,12 +50,17 @@ function parseZodType(
         schema: zodToDynamoose(zodType as ZodObject<any>, dynamoose),
       };
       break;
-    case "ZodRecord":
+    case "ZodRecord": {
+      const valueType = parseZodType(zodType._def.valueType, dynamoose);
       baseParsed = {
         type: Map,
-        schema: parseZodType(zodType._def.valueType, dynamoose),
+        schema:
+          typeof valueType === "object" && valueType.type
+            ? valueType
+            : { type: valueType },
       };
       break;
+    }
     case "ZodOptional":
     case "ZodNullable": {
       const inner = (zodType as ZodOptional<any> | ZodNullable<any>).unwrap();
@@ -65,6 +70,9 @@ function parseZodType(
         required: false,
       };
     }
+    case "ZodAny":
+      baseParsed = Object;
+      break;
     default:
       throw new Error(
         `[zod-to-dynamoose] Unsupported Zod type: ${baseType}. Add explicit handling for this type.`
@@ -76,6 +84,7 @@ function parseZodType(
     ? { type: baseParsed, ...meta }
     : baseParsed;
 }
+
 
 export function zodToDynamoose(
   schema: ZodObject<any>,
