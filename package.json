@@ -1,6 +1,6 @@
 {
   "name": "dynamoose-zod",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Convert Zod schemas to Dynamoose schema definitions easily",
   "keywords": [
     "zod",
